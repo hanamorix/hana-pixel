@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "hana-pixel",
+  "description": "Pixel-art skills for Claude Code.",
+  "owner": {
+    "name": "hana-pixel"
+  },
+  "plugins": [
+    {
+      "name": "hana-pixel",
+      "description": "Turn an image into detailed pixel art in Aseprite and animate it without flicker.",
+      "source": "./",
+      "category": "design"
+    }
+  ]
+}

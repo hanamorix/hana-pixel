@@ -1,0 +1,7 @@
+{
+  "name": "hana-pixel",
+  "version": "1.0.0",
+  "description": "Turn an image into detailed pixel art in Aseprite and animate it without flicker: still recipe, blink, breathing, sway, rigid hands, effects, and measured checks.",
+  "license": "MIT",
+  "keywords": ["pixel-art", "aseprite", "animation", "sprites"]
+}
