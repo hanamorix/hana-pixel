@@ -1,6 +1,6 @@
 -- Base still (globals ST_T, ST_K, ST_ACC, ST_OUT, ST_FRECKLES, FR_*): 3x3 line-preserving shrink, k-means palette from the shrunk colours, nearest colour, orphan merge.
 local dir = assert(PA_DIR, "set PA_DIR = project folder ending in a path separator (\\ or /)")
-local F, LINE_T, K = 3, ST_T or 55, ST_K or 44
+local F, LINE_T, K = 3, ST_T or 45, ST_K or 50
 local ACC = ST_ACC or {}
 local OUTNAME = ST_OUT or "still"
 local pc = app.pixelColor

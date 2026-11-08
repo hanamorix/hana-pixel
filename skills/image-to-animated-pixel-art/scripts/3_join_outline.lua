@@ -1,6 +1,6 @@
 -- Join broken thin outlines: fill a gap pixel only where the SOURCE has a thin dark line in that block
 -- and the gap bridges two existing outline pixels on opposite sides. Face and hands are skipped.
--- Globals: OL_IN, OL_OUT, OL_PASSES (default 2)
+-- Globals: OL_IN, OL_OUT, OL_PASSES (default 2), OL_SKIP {{x,y,w,h},...} (face and hand boxes; set them per image)
 local dir = assert(PA_DIR, "set PA_DIR = project folder ending in a path separator (\\ or /)")
 local pc = app.pixelColor
 local ref = app.open(dir .. assert(PA_SRC, "set PA_SRC = source image (exactly 3x the sprite size)"))
@@ -46,7 +46,7 @@ for y = 0, H - 1 do for x = 0, W - 1 do
   if n > 0 then srcLine[y*W + x] = mc end
   if n >= (OL_DIRECT or 99) then srcStrong[y*W + x] = true end
 end end
-local skip = {{55,62,80,75},{60,440,62,36},{150,440,50,40}}
+local skip = OL_SKIP or {{55,62,80,75},{60,440,62,36},{150,440,50,40}}  -- example values: re-measure per image
 local function skipped(x, y)
   for _, b in ipairs(skip) do if x >= b[1] and y >= b[2] and x < b[1]+b[3] and y < b[2]+b[4] then return true end end
   return false
